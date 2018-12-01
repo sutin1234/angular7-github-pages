@@ -7,10 +7,10 @@ import { FilenotfoundComponent } from './components/filenotfound/filenotfound.co
 
 
 const routes: Routes = [
-  { path: '', component: IndexComponent },
+  { path: 'index', component: IndexComponent }, // กรณีไม่ใส่ URL อะไรมาเลย
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
-  { path: '**', component: FilenotfoundComponent },
+  { path: '**', redirectTo: 'index', pathMatch: 'full' }, // กรณีใส่ URL มาแบบมั่วๆ ให้ return ไปหน้า index
 ];
 
 @NgModule({
